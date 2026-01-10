@@ -1,5 +1,5 @@
-#Muhammad Farhan
-#Fasya Bunhanis Syauqi
+Muhammad Farhan
+Fasya Burhanis Syauqi
 
 # 📰 AG News Classification with DistilBERT
 

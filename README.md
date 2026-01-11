@@ -1,36 +1,70 @@
-Muhammad Farhan
+# Fine-tuning DistilBERT for News Classification
 
-Fasya Burhanis Syauqi
+## 👥 Team Information
 
-# 📰 AG News Classification with DistilBERT
+**Course:** Deep Learning  
+**Institution:** Telkom University  
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
-![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-orange)
-![HuggingFace](https://img.shields.io/badge/Transformers-4.30%2B-yellow)
-![License](https://img.shields.io/badge/License-MIT-green)
+| Name | NIM |
+| :--- | :--- |
+| **Fasya Burhanis Syauqi** | 1103223054 |
+| **Muhammad Muhammad Farhan** | 11032320187 |
 
-Proyek ini adalah implementasi **Deep Learning** untuk klasifikasi teks berita otomatis (Single-Label Classification) menggunakan model Transformer **DistilBERT**.
+---
 
-Model ini dilatih (fine-tuned) menggunakan dataset **AG News** untuk memprediksi kategori berita dengan akurasi tinggi.
+## 🎯 Purpose
 
-## 📌 Tentang Dataset
-Dataset yang digunakan adalah **AG News** yang terdiri dari artikel berita berita yang dikelompokkan menjadi 4 kelas utama:
+This repository contains the implementation of **Task 1: Text Classification**.
 
-| Label ID | Kategori | Deskripsi |
-|----------|----------|-----------|
-| **0** | 🌍 World | Berita internasional & politik global |
-| **1** | ⚽ Sports | Berita olahraga |
-| **2** | 💼 Business | Ekonomi, pasar saham, & industri |
-| **3** | 🔬 Sci/Tech | Teknologi, sains, & gadget |
+The objective is to fine-tune a pre-trained **DistilBERT** model to automatically categorize news articles into specific topics. Given a headline and description, the model predicts the correct category.
 
-## 📂 Struktur Proyek
-Berikut adalah susunan folder dalam repositori ini:
+## 🔍 Project Overview
+
+### The Task: Single-Label Classification
+We aim to classify news articles into one of four mutually exclusive categories. This is a fundamental NLP task useful for content organization and recommendation systems.
+
+### The Model: DistilBERT Base Uncased
+* **Architecture:** Distilled version of BERT (Transformer Encoder).
+* **Approach:** We use the `[CLS]` token output passed through a classification layer to predict the probability of each class.
+
+### The Dataset: AG News
+* **Input:** Text containing the news title and description.
+* **Output:** One of 4 categories:
+  * 0: World
+  * 1: Sports
+  * 2: Business
+  * 3: Sci/Tech
+
+---
+
+## 📊 Technical Approach
+
+### Model Configuration
+* **Base Model:** `distilbert-base-uncased`
+* **Tokenizer:** DistilBertTokenizer
+* **Framework:** PyTorch & Hugging Face Transformers
+
+### Training Configuration
+* **Batch Size:** 64
+* **Learning Rate:** 2e-5
+* **Epochs:** 3
+* **Optimizer:** AdamW
+
+### Results
+The model achieved an accuracy of approximately **94.8%** on the test set.
+
+---
+
+## 📁 Repository Structure
 
 ```text
 project_agnews/
+│
 ├── notebooks/
-│   └── Task1_AGNews.ipynb    # Jupyter Notebook utama (Training & Eval)
+│   └── Task1_AGNews.ipynb    # Main Jupyter Notebook for Training
+│
 ├── reports/
-│   └── report.md             # Laporan hasil analisis & metrik
-├── requirements.txt          # Daftar library dependency
-└── README.md                 # Dokumentasi proyek (File ini)
+│   └── report.md             # Training results and analysis
+│
+├── requirements.txt          # Python dependencies
+└── README.md                 # Project documentation

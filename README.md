@@ -52,19 +52,3 @@ We aim to classify news articles into one of four mutually exclusive categories.
 
 ### Results
 The model achieved an accuracy of approximately **94.8%** on the test set.
-
----
-
-## 📁 Repository Structure
-
-```text
-project_agnews/
-│
-├── notebooks/
-│   └── Task1_AGNews.ipynb    # Main Jupyter Notebook for Training
-│
-├── reports/
-│   └── report.md             # Training results and analysis
-│
-├── requirements.txt          # Python dependencies
-└── README.md                 # Project documentation
